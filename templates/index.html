@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+  <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyDoos</title>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {% load static %}
+    <script type="text/javascript" src="{% static "jquery-3.3.1.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "jquery.cookie.js" %}"></script>
+    <script type="text/javascript" src="{% static "mydos.js" %}"></script>
+    <style type="text/css">
+    *{
+      margin:0 0 0 0;
+    }
+
+    body {
+      background-color: #fafafa;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #todo_list_ui{
+        height: 500px;
+        width: 500px;
+        margin:0 auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    #todo_list_container{
+      height: 450px;
+      overflow-y: auto;
+    }
+
+    #input_footer{
+      margin:0 auto;
+    }
+
+    li {
+      background-color: green;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 5px;
+      padding-right: 5px;
+      color: white;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    #todo_title{
+        margin: 0 auto;
+        font-weight: normal;
+        font-size: 20px;
+        font-family: "Roboto","Helvetica","Arial","sans-serif";
+    }
+
+    .todo-item-container{
+      display:flex;
+      align-items:center;
+    }
+
+    .todo-ops-container{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .todo-message{
+      flex-grow: 1;
+    }
+
+    .todo-ops-button{
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .linethrough{
+      text-decoration: line-through;
+    }
+
+    hr{
+      border-color: green;
+    }
+
+    @media screen and (max-width: 767px) {
+    #todo_list_ui{
+        height: 480px;
+        width: 350px;
+    }
+
+    #todo_list_container{
+      height: 450px;
+      overflow-y: auto;
+    }
+    }
+
+
+  </style>
+  </head>
+  <body>
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">MyDoos</span>
+        <nav class="mdl-navigation" style="height:100%">
+        </nav>
+      </div>
+      </div>
+      <main class="mdl-layout__content">
+
+      </main>
+    <div class="mdl-card mdl-shadow--2dp" id="todo_list_ui">
+      <span id="todo_title">Grocery List</span>
+      <hr/>
+      <div id="todo_list_container">
+        <ul id="todo_list">
+
+        </ul>
+      </div>
+      <div id="input_footer">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="input_todo_message">
+          <label class="mdl-textfield__label" for="input_todo_message">Message...</label>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="add_button">
+        Add
+        </button>
+      </div>
+  </div>
+  </body>
+</html>
