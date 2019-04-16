@@ -20,7 +20,8 @@ class CoreJSONRenderer(JSONRenderer):
         else:
             return json.dumps({
                 self.object_label: data,
-                self.success_label: False,
+                self.success_label: True,
                 self.message_label: ""
             })
+
     

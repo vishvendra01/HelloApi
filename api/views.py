@@ -21,6 +21,7 @@ class TeamViewSet(viewsets.ModelViewSet):
 class TodoGroupViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.TodoGroupSerializer
     queryset = models.TodoGroup.objects.all()
+    renderer_classes = (renderers.CoreJSONRenderer,)
 
 
 class TodoViewSet(viewsets.ModelViewSet):
